@@ -415,9 +415,9 @@ section {
     color: white;
     text-align: center;
     padding: 6rem 4rem;
-    margin: 4rem 0 4rem auto;
-    max-width: 60%;
-    border-radius: 8px 0 0 8px;
+    margin: 4rem auto;
+    max-width: 800px;
+    border-radius: 12px;
 }
 
 .cta-section h2 {
