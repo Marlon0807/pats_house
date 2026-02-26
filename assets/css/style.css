@@ -81,6 +81,7 @@ h1, h2, h3, h4 {
     font-weight: 300;
     margin-bottom: 1rem;
     letter-spacing: 0.02em;
+    white-space: nowrap;
     animation: fadeInUp 1.2s ease-out 0.2s both;
 }
 
