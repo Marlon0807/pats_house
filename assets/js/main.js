@@ -1,3 +1,22 @@
+// Mark JS as loaded for progressive enhancement
+document.documentElement.classList.add('js-loaded');
+
+// Sticky header scroll behavior
+const header = document.getElementById('site-header');
+let lastScrollY = 0;
+
+function updateHeader() {
+    if (window.scrollY > 80) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+    lastScrollY = window.scrollY;
+}
+
+window.addEventListener('scroll', updateHeader, { passive: true });
+updateHeader();
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -12,7 +31,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Intersection Observer for scroll animations
+// Intersection Observer for scroll animations (progressive enhancement)
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -21,16 +40,13 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('is-visible');
         }
     });
 }, observerOptions);
 
-// Observe all sections and cards
+// Only animate elements — content stays visible without JS
 document.querySelectorAll('section, .feature-card, .gallery-item, .accommodation-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+    el.classList.add('animate-on-scroll');
     observer.observe(el);
 });
