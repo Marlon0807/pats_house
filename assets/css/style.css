@@ -278,12 +278,51 @@ h1, h2, h3, h4 {
 }
 
 .trust-icon {
-    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .trust-item strong {
     color: var(--primary);
+}
+
+/* SVG Icons */
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.trust-icon .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.feature-icon .icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.location-icon .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.fireplace-icon {
+    margin-bottom: 0.5rem;
+}
+
+.fireplace-icon .icon {
+    width: 2rem;
+    height: 2rem;
 }
 
 /* Quick Info Bar */
